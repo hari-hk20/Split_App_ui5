@@ -1,0 +1,57 @@
+<mvc:View xmlns:uxap="sap.uxap" xmlns:cards="sap.f.cards" controllerName="ui5.prac.interactiveui.controller.DynamicPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <!-- <Page id="page" title="{i18n>title}">
+    </Page> -->
+    <SplitApp id="splitApp" initialMaster="mp1" initialDetail="page1">
+        <masterPages>
+            <Page id="mp1" title="Master Page 1">
+                <List id="mp1l" itemPress="onListItemPress">
+                    <StandardListItem id="sli1" title="Page 1" type="Active" 
+                    custom:to="page1"></StandardListItem>
+                    <StandardListItem id="sli2" title="Page 2" type="Active" 
+                    custom:to="page2"></StandardListItem>
+                    <StandardListItem id="sli3" title="Page 3" type="Active" 
+                    custom:to="page3"></StandardListItem>
+                    <StandardListItem id="sli4" title="Master 2" type="Navigation" 
+                    press="onPressMaster2"></StandardListItem>
+                </List>
+            </Page>
+
+            <Page id="mp2" title="Master Page 2" showNavButton="true" navButtonPress="onMasterPressBack">
+                <Table id="table1" ></Table>
+            </Page>
+        </masterPages>
+        <detailPages>
+            <Page id="page1" title="Page 1" titleAlignment="Center">
+                <OverflowToolbar id="oftb1">
+                    <Button id="button1" text="Page 2" press="onPressPage2"/>
+                </OverflowToolbar>
+                <IconTabBar id="itb1">
+                    <items>
+                        <IconTabFilter id="itbf1" key="info" text="Info">
+                            <Text id="t1" text="Info Icon Tab bar"/>
+                        </IconTabFilter>
+                        <IconTabFilter id="itbf2" key="attachments" text="Attachment">
+                            <Text id="t2" text="Attachments Icon Tab bar"/>
+                            <List id="l1" headerText="A List" showSeparators="Inner"></List>
+                        </IconTabFilter>
+                        <IconTabFilter id="itbf3" key="notes" text="Notes">
+                            <Text id="t3" text="Info Icon Tab bar"/>
+                            <FeedInput id="fi1"/>
+                        </IconTabFilter>
+                    </items>
+                </IconTabBar>
+            </Page>
+            <Page id="page2" showNavButton="true" navButtonPress="onDetailPressBack">
+                <Text id="pt2" text="second page"/>
+            
+            </Page>
+            <Page id="page3" showNavButton="true" navButtonPress="onDetailPressBack">
+                <Text id="pt3" text="third page"/>
+            </Page>
+        </detailPages>
+    
+    </SplitApp>
+</mvc:View>
